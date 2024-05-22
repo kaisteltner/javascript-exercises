@@ -1,10 +1,7 @@
 const removeFromArray = function(arrayIn, ...elementsToBeRemoved) {
     let arrayOut = [];
-    outerLoop: for (element of arrayIn) {
-        for (elementToBeRemoved of elementsToBeRemoved) {
-            if (element === elementToBeRemoved) {continue outerLoop};
-        }
-        arrayOut.push(element);
+    for (element of arrayIn) {
+        if (!elementsToBeRemoved.includes(element)) {arrayOut.push(element)}
     }
     return arrayOut
 };
